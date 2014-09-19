@@ -1,0 +1,7 @@
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\bin\Release\dragonz.actb.dll
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\bin\Release\dragonz.actb.pdb
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\obj\Release\dragonz.actb.g.resources
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\obj\Release\dragonz.actb.Properties.Resources.resources
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\obj\Release\dragonz.actb.csproj.GenerateResource.Cache
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\obj\Release\dragonz.actb.dll
+E:\Claudio\VisualStudio\DentalPlaceCustomerControl\dragonz.actb\obj\Release\dragonz.actb.pdb

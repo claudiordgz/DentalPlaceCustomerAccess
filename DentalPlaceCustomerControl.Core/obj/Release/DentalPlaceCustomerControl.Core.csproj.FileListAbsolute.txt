@@ -1,8 +1,0 @@
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\bin\Release\DentalPlaceCustomerControl.Core.dll
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\bin\Release\DentalPlaceCustomerControl.Core.pdb
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\obj\Release\MetroWindowResources.baml
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\obj\Release\Resources.baml
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\obj\Release\DentalPlaceCustomerControl.Core_MarkupCompile.cache
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\obj\Release\DentalPlaceCustomerControl.Core.g.resources
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\obj\Release\DentalPlaceCustomerControl.Core.dll
-E:\Claudio\VisualStudio\DentalPlaceCustomerControl\DentalPlaceCustomerControl.Core\obj\Release\DentalPlaceCustomerControl.Core.pdb

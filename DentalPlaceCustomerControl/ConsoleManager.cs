@@ -8,7 +8,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DentalPlaceCustomerControl
+namespace DentalPlaceAccessControl
 {
     [SuppressUnmanagedCodeSecurity]
     public static class ConsoleManager

@@ -8,19 +8,16 @@ using System.Reflection;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 
-namespace DentalPlaceCustomerControl
+namespace DentalPlaceAccessControl
 {
 
     public class ExcelConfiguration
     {
-        private string _configurationPath;
-        private string _configurationFile;
+        public string configurationFile;
         private string _membershipDateColName;
 
-        public ExcelConfiguration(string path, string configFile, string membershipDateColName)
+        public ExcelConfiguration(string membershipDateColName)
         {
-            _configurationPath = path;
-            _configurationFile = configFile;
             _membershipDateColName = membershipDateColName;
         }
 
@@ -32,7 +29,7 @@ namespace DentalPlaceCustomerControl
                 Excel.Workbook workbook;
                 Excel.Worksheet worksheet;
                 Excel.Range range;
-                workbook = excelApp.Workbooks.Open(_configurationPath + _configurationFile);
+                workbook = excelApp.Workbooks.Open(configurationFile);
                 worksheet = (Excel.Worksheet)workbook.Worksheets.get_Item(1);
                 range = worksheet.UsedRange;
                 DataTable dt = new DataTable();

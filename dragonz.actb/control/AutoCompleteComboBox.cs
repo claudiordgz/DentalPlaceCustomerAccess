@@ -78,10 +78,13 @@ namespace dragonz.actb.control
 
         protected override void OnPreviewKeyDown(KeyEventArgs e)
         {
-
             if (e.Key == Key.Enter)
             {
                 this.IsTextSearchEnabled = true;
+            }
+            else if (e.Key == Key.Back)
+            {
+                _textBox.Text = "";
             }
             else
             {

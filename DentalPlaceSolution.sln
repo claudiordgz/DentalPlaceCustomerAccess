@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPlaceCustomerControl", "DentalPlaceCustomerControl\DentalPlaceCustomerControl.csproj", "{B1F71D53-BA34-4E58-B67A-76E82F5A28DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPlaceAccessControl", "DentalPlaceCustomerControl\DentalPlaceAccessControl.csproj", "{B1F71D53-BA34-4E58-B67A-76E82F5A28DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPlaceCustomerControl.Core", "DentalPlaceCustomerControl.Core\DentalPlaceCustomerControl.Core.csproj", "{3FF2F459-201F-4F80-9970-AACDE8881043}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPlace.Core", "DentalPlaceCustomerControl.Core\DentalPlace.Core.csproj", "{3FF2F459-201F-4F80-9970-AACDE8881043}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPlaceCustomerControl.SystemStyles", "DentalPlaceCustomerControl.SystemStyles\DentalPlaceCustomerControl.SystemStyles.csproj", "{ECDC147D-E893-428A-9DAE-995CBACD5310}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalPlace.SystemStyles", "DentalPlaceCustomerControl.SystemStyles\DentalPlace.SystemStyles.csproj", "{ECDC147D-E893-428A-9DAE-995CBACD5310}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dragonz.actb", "dragonz.actb\dragonz.actb.csproj", "{89BC47C7-F14D-46C5-8B9B-0DB90CE2AC42}"
 EndProject

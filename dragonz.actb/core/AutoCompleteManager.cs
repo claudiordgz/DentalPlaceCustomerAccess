@@ -241,8 +241,13 @@ namespace dragonz.actb.core
         {
             if (_textChangedByCode || Disabled || _dataProvider == null)
             {
+                if (_textBox.Text.Length != 0 && _dataProvider == null)
+                {
+                    _textBox.Text = "";
+                }
                 return;
             }
+            
             var text = _textBox.Text;
             if (string.IsNullOrEmpty(text))
             {

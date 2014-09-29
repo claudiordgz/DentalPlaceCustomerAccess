@@ -12,73 +12,55 @@ using System.Windows.Input;
 using System.Data;
 using dragonz.actb.core;
 using dragonz.actb.provider;
+using System.IO;
 
 
-namespace DentalPlaceCustomerControl
+namespace DentalPlaceAccessControl
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        Customers _customersData;
+        CustomersViewModel _customersData;
+        DentalPlaceConfigHandler cfgHandler;
 
         public MainWindow()
         {
             InitializeComponent();
-            _customersData = new Customers();
             FrameworkElement.StyleProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata
             {
                 DefaultValue = FindResource(typeof(Window))
             });
-
+            
             int error_t = CheckConfig();
             if (error_t == 1)
             {
                 var appSettings = ConfigurationManager.AppSettings;
+                cfgHandler = new DentalPlaceConfigHandler();
+                _customersData = new CustomersViewModel();
                 String[] Headers = { appSettings["CustomersID"], appSettings["CustomersNames"], appSettings["CustomersMembershipDate"], appSettings["CustomersMembershipStatus"] };
-                string directoryToCustomersFile;
-                if (String.IsNullOrEmpty(appSettings["CustomersSourceDirectory"]))
+                AccessControlMenu.openFile = cfgHandler.openFile.openDialog;
+                AccessControlMenu.loadRules = cfgHandler.LoadedConfigurationFile;
+                cfgHandler.Headers = Headers;
+                cfgHandler.invalidMembership = appSettings["CustomersMembershipInvalid"];
+                cfgHandler.validMsg = appSettings["ValidCustomerMessage"];
+                cfgHandler.invalidMsg = appSettings["InvalidCustomerMessage"];
+                cfgHandler.controlReference = actbIds;
+                cfgHandler.viewModelReference = _customersData;
+
+                string sourceFile = appSettings["CustomersSourceFile"];
+                if (File.Exists(sourceFile))
                 {
-                    directoryToCustomersFile = Environment.CurrentDirectory;
+                    cfgHandler.fileName = sourceFile;
+                    cfgHandler.LoadedConfigurationFile();
                 }
                 else
                 {
-                    directoryToCustomersFile = appSettings["CustomersSourceDirectory"];
+                    cfgHandler.fileName = null;
                 }
-                string sourceFile = appSettings["CustomersSourceFile"];
-                actbIds.MaxLength = setCustomersData(Headers, directoryToCustomersFile, sourceFile, Headers[0], 
-                    appSettings["CustomersMembershipInvalid"],
-                    appSettings["ValidCustomerMessage"],
-                    appSettings["InvalidCustomerMessage"]);
-                actbIds.ItemsSource = _customersData.ids;
-                actbIds.AutoCompleteManager.DataProvider = new SimpleStaticDataProvider(_customersData.ids);
-                actbIds.AutoCompleteManager.AutoAppend = true;
                 this.DataContext = _customersData;
-                DataObject.AddPastingHandler(actbIds, new DataObjectPastingEventHandler(actbIds.AutoCompleteComboBox_TextPasted));
             }
-        }
-
-        public int setCustomersData(String[] headers, string pathToConfig, string configFile, string headerColName, string invalidMembership, string validMsg, string invalidMsg)
-        {
-            ExcelConfiguration e = new ExcelConfiguration(pathToConfig, configFile, headers[2]);
-            DataTable customersExcel = e.Data;
-            Dictionary<string, String[]> customerData = new Dictionary<string,string[]>();
-            for(int i = 0; i != headers.Length; ++i) {
-                String[] data = customersExcel.AsEnumerable().Select(r => r.Field<string>(headers[i])).ToArray();
-                customerData[headers[i]] = data;
-            }
-            int maxLength = -1;
-            for (int i = 0; i != customerData[headerColName].Length; ++i)
-            {
-                int currentLength = customerData[headerColName][i].Length;
-                if (currentLength > maxLength)
-                {
-                    maxLength = currentLength;
-                }
-            }
-            _customersData.setup(customerData, headers, invalidMembership, validMsg, invalidMsg);
-            return maxLength;
         }
 
         public int CheckConfig()
@@ -86,13 +68,9 @@ namespace DentalPlaceCustomerControl
             try
             {
                 var appSettings = ConfigurationManager.AppSettings;
-
-                if (appSettings.Count == 0)
-                {
+                if (appSettings.Count == 0) {
                     return appSettings.Count;
-                }
-                else
-                {
+                } else {
                     return 1;
                 }
             }

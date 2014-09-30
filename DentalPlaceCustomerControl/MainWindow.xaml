@@ -5,7 +5,7 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:UX="clr-namespace:DentalPlace.Core.UX;assembly=DentalPlace.Core"
         xmlns:actb.control="clr-namespace:dragonz.actb.control;assembly=dragonz.actb"
-        Title="Dental Place" Width="600" Height="430"
+        Title="Dental Place" Width="1024" Height="640"
         WindowStartupLocation="CenterScreen"> 
     <DockPanel>
         <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
@@ -23,17 +23,17 @@
                 <ColumnDefinition Width="5*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" MaxWidth="300" Source="resources/denplac.png"/>
-            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Vertical">
+            <Image RenderOptions.BitmapScalingMode="HighQuality" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Source="pack://application:,,,/DentalPlaceAccessControl;component/resources/logodpc.png"/>
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50px" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="70px" />
-                            <ColumnDefinition Width="75px" />
+                            <ColumnDefinition Width="0.06*" />
+                            <ColumnDefinition Width="50px" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="70px" />
+                            <ColumnDefinition Width="0.06*" />
                         </Grid.ColumnDefinitions>
                         <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Folio:" Target="{Binding ElementName=actbIds}" FontFamily="Microsoft Sans Serif" FontSize="16"/>
                         <actb.control:AutoCompleteComboBox Grid.Column="2" VerticalAlignment="Center" x:Name="actbIds" FontFamily="Microsoft Sans Serif" FontSize="16" SelectedIndex="{Binding CustomerIndex}"/>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define FilesPath="C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\"?>
+  <?define Debug="Debug"?>
+  <?define Release="Release"?>
+</Include>

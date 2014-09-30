@@ -22,9 +22,9 @@ namespace DentalPlace.Core.UX
         {
             InitializeComponent();
 
-            ToggleButton.Visibility = System.Windows.Visibility.Hidden;
-            MainMenu.Visibility = System.Windows.Visibility.Visible;
-            isMenuCollapsed = false;
+            ToggleButton.Visibility = System.Windows.Visibility.Visible;
+            MainMenu.Visibility = System.Windows.Visibility.Collapsed;
+            isMenuCollapsed = true;
             this.DataContext = this;
         }
 

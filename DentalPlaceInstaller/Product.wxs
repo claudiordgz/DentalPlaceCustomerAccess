@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define ProductVersion = "0.0.1"?>
+<?define ProductUpgradeCode = "9722CE2D-F867-48BA-8C7B-71C755190CCC"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="22396965-00D8-44A4-8AD2-BB80448323E5"
+         Name="Dental Place Access Control"
+         Language="1033"
+         Version="$(var.ProductVersion)"
+         Manufacturer="Claudiordgz"
+         UpgradeCode="$(var.ProductUpgradeCode)">
+
+    <Package InstallerVersion="301"
+           Compressed="yes"
+           InstallScope="perMachine"
+           Manufacturer="Dental Place"
+           Description="Installs Dental Place Access Control"
+           Keywords="DentalPlace,AccessControl"
+           Comments="(c) 2014 Dental Place" />
+    <UIRef Id="DentalPlaceUI_Minimal" />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <!--Directory structure-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="DENTALPLACE_FOLDER" Name="DentalPlace">
+          <Directory Id="$(var.Configuration)_FOLDER" Name="AccessControl"/>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Dental Place Access Control">
+        </Directory>
+      </Directory>
+    </Directory>
+    <Property Id="WIXUI_INSTALLDIR" Value="ACCESSCONTROL_FOLDER" />
+    
+    <DirectoryRef Id="ApplicationProgramsFolder">
+    <Component Id="ApplicationShortcut" Guid="{513925D7-4348-4006-9022-8B167C234AAB}">
+        <Shortcut Id="ApplicationStartMenuShortcut" 
+                  Name="Dental Place Access Control"
+                  Description="Provides Access Control for Customers"
+                  Target="[#$(var.Configuration)DentalPlaceAccessControl.exe]"
+                  WorkingDirectory="$(var.Configuration)_FOLDER"/>
+        <Shortcut Id="UninstallProduct"             
+                  Name="Uninstall Access Control"
+                  Description="Uninstalls Dental Place Access Control"
+                  Target="[SystemFolder]msiexec.exe"
+                  Arguments="/x [ProductCode]"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\DentalPlace\AccessControl" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+    </Component>
+</DirectoryRef>
+
+    
+    <!--Features-->
+    <Feature Id="ProductFeature" Title="Main Product" Level="1">
+      <!--Linked Features-->
+      <ComponentGroupRef Id="$(var.Configuration)FilesGroup"/>  
+      <ComponentRef Id="ApplicationShortcut" />  
+    </Feature>
+    
+  </Product>
+</Wix>

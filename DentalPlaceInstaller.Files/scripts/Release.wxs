@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="Release_FOLDER" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="ReleaseFilesGroup">
+            <Component Id="cmpF871D8891DBA40A701364A71DD23EBC3" Directory="Release_FOLDER" Guid="3399CA2D-0EA8-4DC8-8D01-EA5B7AA5AC31">
+                <File Id="fil0BF4509CD52C5582F8EFDF631768204E" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlace.Core.dll" />
+            </Component>
+            <Component Id="cmpA1CA05BB44C8F1B30918BE5527BDA2A8" Directory="Release_FOLDER" Guid="476BC339-41A6-498E-B6B8-17B65F53462B">
+                <File Id="fil624344EA967EB69202095E4B8CA703E2" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlace.Core.pdb" />
+            </Component>
+            <Component Id="cmpE6D465A44AD1BB0C9546CE4E64BF032F" Directory="Release_FOLDER" Guid="682D5779-E7EB-4FE8-B927-FBCE5E2FAEB1">
+                <File Id="fil05F6C8A7F2BD5A25CEC8FF6DCDCBF544" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlace.SystemStyles.dll" />
+            </Component>
+            <Component Id="cmpEBB8E8FD6787CA33A56E3BA15AF612C2" Directory="Release_FOLDER" Guid="778F0302-CDEE-440B-AAB8-133539A73973">
+                <File Id="filC30C7BD0C1945FE4D3608A72024CC67F" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlace.SystemStyles.pdb" />
+            </Component>
+            <Component Id="cmp6EDB235DF08ED23BBDAF0E5537E23627" Directory="Release_FOLDER" Guid="05768BFC-437D-440A-8996-681BA9F6B9B4">
+                <File Id="filD3480BA7ADD4EF3CF51F1808D7797D97" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlaceAccessControl.exe" />
+            </Component>
+            <Component Id="cmp13A13F83554235119EC85707F5F2A2B7" Directory="Release_FOLDER" Guid="7E9A241B-152E-4E19-AFCB-823B02BAC647">
+                <File Id="fil5800CABD68B5914BBDF4754B593E891A" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlaceAccessControl.exe.config" />
+            </Component>
+            <Component Id="cmp23591E972157F1BB4CD9485AE9186D47" Directory="Release_FOLDER" Guid="B070668E-3227-4F1E-954A-A3249DD005B9">
+                <File Id="filBBF542B4E866127D686A681B8EE8D6F1" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlaceAccessControl.pdb" />
+            </Component>
+            <Component Id="cmp2A1BF93C7FCCE8899C093964AD72C84A" Directory="Release_FOLDER" Guid="5E481A81-E714-4768-B096-91A14D8747AB">
+                <File Id="fil8CCB05F22BB02AB4530A2FEB7A98D5CA" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\DentalPlaceAccessControl.vshost.exe" />
+            </Component>
+            <Component Id="cmpA64686F89FE6805928402A7906E3D026" Directory="Release_FOLDER" Guid="59A16354-BB51-4B9B-88FE-F56E2AC6857A">
+                <File Id="fil9B7F16DD954F2932D804FA108D162EBA" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\dragonz.actb.dll" />
+            </Component>
+            <Component Id="cmp8FC80A31D2719A0DF9A118006CD4032F" Directory="Release_FOLDER" Guid="8FAFF381-F2E9-443D-9E81-F9E11170724F">
+                <File Id="filBC9C8F0A49737CD4B75729A4538F8516" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\dragonz.actb.pdb" />
+            </Component>
+            <Component Id="cmp81E4307FE75E3B6173DAC269801D13F7" Directory="Release_FOLDER" Guid="94F8DEE6-484A-436E-ABF2-CA4B19181E62">
+                <File Id="fil7FD631B87B3F01775D8D4B795570B0F4" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\MahApps.Metro.dll" />
+            </Component>
+            <Component Id="cmpA095B4D3719624E534A1922A3FE0F661" Directory="Release_FOLDER" Guid="2551FF07-7176-4DA2-8196-BA61840968C9">
+                <File Id="filDEEB6F597A08DF4DE826BF0AAF6C45BB" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\MahApps.Metro.xml" />
+            </Component>
+            <Component Id="cmp0508BD2A982E96F73EF19E0B8AB2CCA4" Directory="Release_FOLDER" Guid="3F1BD409-82EB-435B-8E65-34FC02FB4F14">
+                <File Id="filFC8BE7BDC5C4985443D61990A4930D62" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\OrtoClientes.xlsx" />
+            </Component>
+            <Component Id="cmp19115DBEF98692CCFE9973B1456736B5" Directory="Release_FOLDER" Guid="9C73E9F7-D7E9-4D5E-9D2E-ACE96A071789">
+                <File Id="filB55EDFF002BE164EFA5C7F38ECA93558" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\System.Windows.Interactivity.dll" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

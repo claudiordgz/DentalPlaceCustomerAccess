@@ -1,0 +1,78 @@
+﻿Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿Release' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿Release' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿Release' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿Debug' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+heat.exe : error HEAT5052 : The directory 'C:\Users\claudio.rodriguez\Documents\Visual Studio 2013\Projects\dentalplacecustomeraccess\DentalPlaceCustomerControl\bin\﻿' could not be found.
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+
+Windows Installer XML Toolset Toolset Harvester version 3.8.1128.0
+Copyright (c) Outercurve Foundation. All rights reserved.
+

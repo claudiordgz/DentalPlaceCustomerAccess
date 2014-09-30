@@ -4,8 +4,6 @@ DentalPlaceCustomerAccess was developed using WPF and some kind of MVVMish in Vi
 
 It compiles on both Windows 7 and Windows 8.
 
-> ![Image 058.png](https://bitbucket.org/repo/Roqadj/images/3439258732-Image%20058.png)
+> ![Image 068.png](https://bitbucket.org/repo/Roqadj/images/3852190768-Image%20068.png)
 
-> ![Image 059.png](https://bitbucket.org/repo/Roqadj/images/2538884255-Image%20059.png)
-
-> ![Image 060.png](https://bitbucket.org/repo/Roqadj/images/2528323022-Image%20060.png)
+> ![Image 070.png](https://bitbucket.org/repo/Roqadj/images/3328825522-Image%20070.png)

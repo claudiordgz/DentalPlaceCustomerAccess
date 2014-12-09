@@ -35,9 +35,9 @@ namespace DentalPlaceAccessControl
                 DataTable dt = new DataTable();
                 if (range != null) {
                     List<int> colIdx = new List<int>();
-                    int row = 1;
-                    int end = range.Columns.Count + 1;
-                    int vigenciaIdx = 0;
+                    int row = 1, 
+                        end = range.Columns.Count + 1, 
+                        vigenciaIdx = 0;
                     for (int column=1; column != end; ++column) {
                         string value = (range.Cells[row, column] as Excel.Range).Value2 as string;
                         if (value != null) {
@@ -54,16 +54,35 @@ namespace DentalPlaceAccessControl
                     end = range.Rows.Count + 1;
                     for (row = 2; row != end; ++row) {
                         DataRow dr = dt.NewRow();
+                        bool skip = false;
                         for (int col = 0; col != colIdx.Count; ++col) {
                             if(colIdx[col] != vigenciaIdx) {
-                                string value = (range.Cells[row, colIdx[col]] as Excel.Range).Value2.ToString();
-                                dr[col] = value;
+                                string value = GetValue(range, row, colIdx[col]);
+                                if (value != null)
+                                {
+                                    dr[col] = value;
+                                }
+                                else
+                                {
+                                    skip = true;
+                                    break;
+                                }
                             } else {
-                                double d = double.Parse((range.Cells[row, colIdx[col]] as Excel.Range).Value2.ToString());
-                                DateTime conv = DateTime.FromOADate(d);
-                                dr[col] = conv;
+                                string value = GetValue(range, row, colIdx[col]);
+                                if (value != null)
+                                {
+                                    double d = double.Parse(value);
+                                    DateTime conv = DateTime.FromOADate(d);
+                                    dr[col] = conv;
+                                }
+                                else
+                                {
+                                    skip = true;
+                                    break;
+                                }
                             }
                         }
+                        if (skip) continue;
                         dt.Rows.Add(dr);
                         dt.AcceptChanges();
                     }
@@ -75,6 +94,20 @@ namespace DentalPlaceAccessControl
                 Marshal.ReleaseComObject(excelApp);
                 return dt;
             }
+        }
+
+        private string GetValue(Excel.Range range, int row, int col)
+        {
+            string value;
+            try
+            {
+                value = (range.Cells[row, col] as Excel.Range).Value2.ToString();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return value;
         }
     }
 }

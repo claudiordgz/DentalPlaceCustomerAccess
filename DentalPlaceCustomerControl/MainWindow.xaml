@@ -24,7 +24,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Image  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" MaxWidth="300" Source="resources/denplac.png"/>
-            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Vertical">
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50px" />

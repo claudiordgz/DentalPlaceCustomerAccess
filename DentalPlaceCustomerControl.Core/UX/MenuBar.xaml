@@ -15,7 +15,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel>
-        <Menu Name="MainMenu" IsMainMenu="True" SnapsToDevicePixels="True" >
+        <Menu Name="MainMenu" IsMainMenu="True" SnapsToDevicePixels="True">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <DockPanel HorizontalAlignment="Stretch"/>

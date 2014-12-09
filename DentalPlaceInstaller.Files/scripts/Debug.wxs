@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="Debug_FOLDER" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="DebugFilesGroup">
+            <Component Id="cmpDD45DA97CBA02F81D8A0CADE9E722A6F" Directory="Debug_FOLDER" Guid="70367CCA-3B51-4490-9100-BD08CAC4C9E9">
+                <File Id="fil7D98D6E8C08C88CD024A11303066C4F2" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlace.Core.dll" />
+            </Component>
+            <Component Id="cmp7DDCADC8B537EBC62B6FEEB594BAF22E" Directory="Debug_FOLDER" Guid="503097F3-E25A-4329-92FB-062681014C70">
+                <File Id="fil321809C29FB36F5E7F50BD4406E30EAF" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlace.Core.pdb" />
+            </Component>
+            <Component Id="cmp07E4918557C6569EF3E5E0209FF556DB" Directory="Debug_FOLDER" Guid="3B644CF6-F73E-444B-AE7F-DDAF35D16B59">
+                <File Id="fil9588D3E32013FC5CBE84BC33493F6153" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlace.SystemStyles.dll" />
+            </Component>
+            <Component Id="cmp3D4493D1C56EA98C58FA280B345739CA" Directory="Debug_FOLDER" Guid="450DB0F0-1F7C-42EF-9DD9-67864BA957D4">
+                <File Id="fil522C92AB3A719211620814644588A363" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlace.SystemStyles.pdb" />
+            </Component>
+            <Component Id="cmpA250F4BC54619BC6A57DFF6AFC8A1C21" Directory="Debug_FOLDER" Guid="263BA792-6A17-4B20-BE1A-8E809D8988AF">
+                <File Id="filDA7C65D80E1CDA797688BFF494EEBD22" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlaceAccessControl.exe" />
+            </Component>
+            <Component Id="cmp532658EC69E4727480C4C31706E9F79A" Directory="Debug_FOLDER" Guid="7D84D854-F5F5-4925-B3DD-79C36FF87995">
+                <File Id="filA65BE5643C890FA86ECBF398BD6EF34E" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlaceAccessControl.exe.config" />
+            </Component>
+            <Component Id="cmpE0A9D7710C37AAB31A1CD20C85896EF7" Directory="Debug_FOLDER" Guid="870CEEDF-7983-4CEE-BE24-CD7116DBD157">
+                <File Id="filB3B1D958C0A3EE101A1764252F00BA72" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlaceAccessControl.pdb" />
+            </Component>
+            <Component Id="cmp9A9225DACA8849E1A3AE2A44A2BF53B8" Directory="Debug_FOLDER" Guid="E9B4C091-ED08-4E38-8B8A-E68F07533321">
+                <File Id="filB2BA29D7314BDA34750B606CC21E4EFE" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlaceAccessControl.vshost.exe" />
+            </Component>
+            <Component Id="cmpBB8FB8E225B0FD9BE84EE24A25B5B213" Directory="Debug_FOLDER" Guid="192CE561-AB58-45F6-AC31-F318F2A971F9">
+                <File Id="fil77DCA5821C47265CC0B0F3E32B0BDA10" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\DentalPlaceAccessControl.vshost.exe.config" />
+            </Component>
+            <Component Id="cmpF98F5143669CC798067629C15C7B135E" Directory="Debug_FOLDER" Guid="CDBF0735-EA5E-4106-BCEF-8A2F03D4CE32">
+                <File Id="fil2F060DE781D442E2964F06F07AA30134" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\dragonz.actb.dll" />
+            </Component>
+            <Component Id="cmp74546370BF74D3D5AB0622ADD4B8BA33" Directory="Debug_FOLDER" Guid="974CF135-64CE-4976-9C94-00EE5C4ADD55">
+                <File Id="fil6B3BE0F985B55904E14E31DFB1DA2D58" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\dragonz.actb.pdb" />
+            </Component>
+            <Component Id="cmp751D7AE36264F19E46428916E2979978" Directory="Debug_FOLDER" Guid="89029637-5510-426B-A713-FD0D5CB62D3E">
+                <File Id="fil2C6B823F35F0D4940BD5841ED162C4D3" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\MahApps.Metro.dll" />
+            </Component>
+            <Component Id="cmp861352A88811F30EF35A533DD9E88510" Directory="Debug_FOLDER" Guid="EEDB5816-C44F-4E60-889D-D05FAE5BF37D">
+                <File Id="fil8B109145C96715C62BFC39DDF8BAAA93" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\MahApps.Metro.xml" />
+            </Component>
+            <Component Id="cmp18760C0CB1230F609CA9CF02808D7C5F" Directory="Debug_FOLDER" Guid="E7D625B9-E64A-47E0-92D2-6FCB51F8E204">
+                <File Id="filBE987273CAE8239C50158CE325111DA8" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\OrtoClientes.xlsx" />
+            </Component>
+            <Component Id="cmp243A470E226C6E9B71106EC34B69F552" Directory="Debug_FOLDER" Guid="7AA69B9A-3671-43D7-95B7-DD5069F97706">
+                <File Id="filA48E5806478B10604F200B7857031B8E" KeyPath="yes" Source="$(var.FilesPath)$(var.Debug)\System.Windows.Interactivity.dll" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

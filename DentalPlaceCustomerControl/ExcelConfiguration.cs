@@ -7,18 +7,98 @@ using System.Data;
 using System.Reflection;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
+using Mantin.Controls.Wpf.Notification;
+using System.Windows.Media;
+
 
 namespace DentalPlaceAccessControl
 {
+    
+
+    public static class ExcelUtilities
+    {
+        public static void DisplayError(string errorMessage, string customerName)
+        {
+            new ToastPopUp(errorMessage, customerName, NotificationType.Error)
+            {
+                Background = new SolidColorBrush(Color.FromArgb(255, 68, 68, 68)),
+                BorderBrush = new SolidColorBrush(Color.FromArgb(255, 68, 68, 68)),
+                FontColor = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255))
+            }.Show();
+        }
+        public static object GetDate(string personName, string possibleDate) 
+        {
+            DateTime? conv = null;
+            if (possibleDate == null) return conv;
+            try
+            {
+                double d = double.Parse(possibleDate);
+                conv = DateTime.FromOADate(d);
+            }
+            catch (System.FormatException)
+            {
+                DisplayError("Incorrect Date Field for:", personName);
+            }
+            return conv;
+        }
+    }
+
 
     public class ExcelConfiguration
     {
         public string configurationFile;
         private string _membershipDateColName;
+        private string _customerNameColName;
 
-        public ExcelConfiguration(string membershipDateColName)
+        public ExcelConfiguration(string customerNameColName, string membershipDateColName)
         {
             _membershipDateColName = membershipDateColName;
+            _customerNameColName = customerNameColName;
+        }
+
+        public class ConfigurationControl
+        {
+            public List<int> colIdx;
+            public int membershipColumnIndex;
+            public int patientNameColumnIndex;
+
+            public ConfigurationControl()
+            {
+                colIdx = new List<int>();
+            }
+        }
+
+        private ConfigurationControl GetHeaderNames(DataTable userInformationTable, Excel.Range range)
+        {
+            ConfigurationControl config = new ConfigurationControl();
+            int row = 1,
+                end = range.Columns.Count + 1;
+            for (int column = 1; column != end; ++column)
+            {
+                string columnHeaderName = (range.Cells[row, column] as Excel.Range).Value2 as string;
+                if (columnHeaderName != null && columnHeaderName.Length != 0)
+                {
+                    userInformationTable.Columns.Add(columnHeaderName);
+                    config.colIdx.Add(column);
+                    config.membershipColumnIndex = (columnHeaderName == _membershipDateColName && config.membershipColumnIndex == 0) ? column : config.membershipColumnIndex;
+                    config.patientNameColumnIndex = (columnHeaderName == _customerNameColName && config.patientNameColumnIndex == 0) ? column : config.patientNameColumnIndex;
+                }
+            }
+            return config;
+        }
+
+        delegate object ExtractMethod(string customerName, string currentValue);
+
+        private object processValue(string customerName, string value, ExtractMethod subProcess = null)
+        {
+            if (subProcess != null)
+            {
+                return subProcess(customerName, value);
+            }
+            else
+            {
+                return value;
+            }
         }
 
         public DataTable Data
@@ -32,67 +112,54 @@ namespace DentalPlaceAccessControl
                 workbook = excelApp.Workbooks.Open(configurationFile);
                 worksheet = (Excel.Worksheet)workbook.Worksheets.get_Item(1);
                 range = worksheet.UsedRange;
-                DataTable dt = new DataTable();
+                DataTable userInformationTable = new DataTable();
                 if (range != null) {
-                    List<int> colIdx = new List<int>();
-                    int row = 1, 
-                        end = range.Columns.Count + 1, 
-                        vigenciaIdx = 0;
-                    for (int column=1; column != end; ++column) {
-                        string value = (range.Cells[row, column] as Excel.Range).Value2 as string;
-                        if (value != null) {
-                            if (value.Length != 0) {
-                                dt.Columns.Add(value);
-                                colIdx.Add(column);
-                                if (value == _membershipDateColName)
+                    ConfigurationControl configuration = this.GetHeaderNames(userInformationTable, range);
+                    int end = range.Rows.Count + 1;
+                    string customerName = "";
+                    for (int row = 2; row != end; ++row) {
+                        DataRow dr = userInformationTable.NewRow();
+                        bool unsafeValueSkipAllRow = false;
+                        for (int col = 0; col != configuration.colIdx.Count; ++col)
+                        {
+                            object retVal = null;
+                            string value = GetValue(range, row, configuration.colIdx[col]);
+                            if (configuration.colIdx[col] != configuration.membershipColumnIndex)
+                            {
+                                if (configuration.colIdx[col] == configuration.patientNameColumnIndex) 
                                 {
-                                    vigenciaIdx = column;
-                                }
-                            }
-                        }
-                    }
-                    end = range.Rows.Count + 1;
-                    for (row = 2; row != end; ++row) {
-                        DataRow dr = dt.NewRow();
-                        bool skip = false;
-                        for (int col = 0; col != colIdx.Count; ++col) {
-                            if(colIdx[col] != vigenciaIdx) {
-                                string value = GetValue(range, row, colIdx[col]);
-                                if (value != null)
-                                {
-                                    dr[col] = value;
+                                    retVal = processValue(value, value);
+                                    customerName = (string)retVal ?? customerName;
                                 }
                                 else
                                 {
-                                    skip = true;
-                                    break;
+                                    retVal = processValue(customerName, value);
                                 }
-                            } else {
-                                string value = GetValue(range, row, colIdx[col]);
-                                if (value != null)
-                                {
-                                    double d = double.Parse(value);
-                                    DateTime conv = DateTime.FromOADate(d);
-                                    dr[col] = conv;
+                                if (retVal == null) 
+                                { 
+                                    unsafeValueSkipAllRow = true;
                                 }
-                                else
-                                {
-                                    skip = true;
-                                    break;
-                                }
+                                
+                            } 
+                            else 
+                            {
+                                ExtractMethod getDate = ExcelUtilities.GetDate;
+                                retVal = processValue(customerName, value, getDate);
+                                if (retVal == null) { unsafeValueSkipAllRow = true; }
                             }
+                            if (unsafeValueSkipAllRow) break;
+                            dr[col] = retVal;
                         }
-                        if (skip) continue;
-                        dt.Rows.Add(dr);
-                        dt.AcceptChanges();
+                        if (unsafeValueSkipAllRow) continue;
+                        userInformationTable.Rows.Add(dr);
+                        userInformationTable.AcceptChanges();
                     }
                 }
-
                 workbook.Close(false, Missing.Value, Missing.Value);
                 Marshal.ReleaseComObject(workbook);
                 excelApp.Quit();
                 Marshal.ReleaseComObject(excelApp);
-                return dt;
+                return userInformationTable;
             }
         }
 

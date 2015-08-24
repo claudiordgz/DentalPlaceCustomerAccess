@@ -38,7 +38,7 @@ namespace DentalPlaceAccessControl
             }
             catch (System.FormatException)
             {
-                DisplayError("Incorrect Date Field for:", personName);
+                DisplayError("Fecha Incorrecta, no se utilizará la fila completa de su tabla", personName);
             }
             return conv;
         }
@@ -117,10 +117,10 @@ namespace DentalPlaceAccessControl
                 if (range != null) {
                     ConfigurationControl configuration = this.GetHeaderNames(userInformationTable, range);
                     int end = range.Rows.Count + 1;
-                    string customerName = "";
                     for (int row = 2; row != end; ++row) {
                         DataRow dr = userInformationTable.NewRow();
                         bool unsafeValueSkipAllRow = false;
+                        string customerName = "";
                         for (int col = 0; col != configuration.colIdx.Count; ++col)
                         {
                             object retVal = null;
@@ -131,16 +131,21 @@ namespace DentalPlaceAccessControl
                                 {
                                     retVal = processValue(value, value);
                                     customerName = (string)retVal ?? customerName;
+                                    if (retVal == null)
+                                    {
+                                        unsafeValueSkipAllRow = true;
+                                        ExcelUtilities.DisplayError("Nombre de Cliente Incorrecto, no se utilizará la fila completa de su tabla.", customerName);
+                                    }
                                 }
                                 else
                                 {
                                     retVal = processValue(customerName, value);
+                                    if (retVal == null)
+                                    {
+                                        unsafeValueSkipAllRow = true;
+                                        ExcelUtilities.DisplayError("Campo Incorrecto, posiblemente ID, no se utilizará la fila completa de su tabla", customerName);
+                                    }
                                 }
-                                if (retVal == null) 
-                                { 
-                                    unsafeValueSkipAllRow = true;
-                                }
-                                
                             } 
                             else 
                             {

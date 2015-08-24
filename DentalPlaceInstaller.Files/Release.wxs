@@ -48,6 +48,9 @@
             <Component Id="cmp19115DBEF98692CCFE9973B1456736B5" Directory="Release_FOLDER" Guid="9C73E9F7-D7E9-4D5E-9D2E-ACE96A071789">
                 <File Id="filB55EDFF002BE164EFA5C7F38ECA93558" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\System.Windows.Interactivity.dll" />
             </Component>
+            <Component Id="cmpB01C3490C98041DE80EC9E323B8A7DB1" Directory="Release_FOLDER" Guid="5C6BE810-6FC7-4185-A9EF-A66966345F1A">
+              <File Id="filB01C3490C98041DE80EC9E323B8A7DB1" KeyPath="yes" Source="$(var.FilesPath)$(var.Release)\Mantin.Controls.Wpf.Notification.dll" />
+            </Component>
         </ComponentGroup>
     </Fragment>
 </Wix>

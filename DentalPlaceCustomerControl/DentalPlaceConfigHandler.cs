@@ -41,7 +41,7 @@ namespace DentalPlaceAccessControl
             {
                 fileName = openFile.filename; 
             }
-            ExcelConfiguration e = new ExcelConfiguration(Headers[2]);
+            ExcelConfiguration e = new ExcelConfiguration(Headers[1], Headers[2]);
             e.configurationFile = fileName;
             DataTable customersExcel = e.Data;
             Dictionary<string, String[]> lCustomerData = new Dictionary<string, string[]>();

@@ -26,6 +26,7 @@ namespace DentalPlaceAccessControl
                 FontColor = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255))
             }.Show();
         }
+
         public static object GetDate(string personName, string possibleDate) 
         {
             DateTime? conv = null;
